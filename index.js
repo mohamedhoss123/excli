@@ -8,7 +8,7 @@ const program = new Command();
 program
   .name("exp-cli")
   .description("CLI tool to make your express project more fun")
-  .version("0.0.7");
+  .version("0.0.8");
 
 program
   .command("new")
