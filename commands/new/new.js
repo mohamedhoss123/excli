@@ -2,7 +2,7 @@ const { unzip } = require("../../test");
 const { changePjName } = require("../../util/changePJname");
 const inquirer = require('inquirer');
 const { MVCInit } = require("./mvc");
-const { optinalPackges } = require("./packgesToAdd");
+const { optinalPackges,optinalDevPackges } = require("./packgesToAdd");
 const prompt = inquirer.createPromptModule();
 
 
@@ -17,6 +17,7 @@ async function newGen(str){
     await unzip()
     changePjName(str)
     await optinalPackges(prompt)
+    await optinalDevPackges(prompt)
     // if(data.choseProject == "MVC"){
     //     MVCInit(prompt)
     // }

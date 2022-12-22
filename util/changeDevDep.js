@@ -1,10 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 
-function changeDependency(packges) {
+function changeDevDependency(packges) {
   let fileContent = fs.readFileSync("package.json");
   let jsonFile = JSON.parse(fileContent);
-  jsonFile.dependencies = Object.assign(packges,jsonFile.dependencies);
+  jsonFile.devDependencies = Object.assign(packges,jsonFile.devDependencies);
   console.log(jsonFile);
   let data = JSON.stringify(jsonFile,null," ")
   console.log(data);
@@ -20,5 +20,5 @@ function changeDependency(packges) {
   );
 }
 module.exports = {
-  changeDependency,
+  changeDevDependency,
 };
