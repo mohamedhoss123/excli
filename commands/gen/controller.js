@@ -12,7 +12,7 @@ async function generateController(name) {
     "thisisplaceholder",
     FileName + "Controller"
   );
-  writeContent(name, controllerContent, "controllers");
+  writeContent(name, controllerContent, "controllers","controller");
 }
 module.exports = {
   generateController,

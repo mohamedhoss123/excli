@@ -1,8 +1,6 @@
-let jsTypeorm = `
+const EntitySchema = require("typeorm").EntitySchema
 
-var EntitySchema = require("typeorm").EntitySchema
-
-module.exports = new EntitySchema({
+export default new EntitySchema({
     name: "thisiplaceHolder",
     tableName: "thisiplaceHolder",
     columns: {
@@ -14,17 +12,4 @@ module.exports = new EntitySchema({
     },
 })
 
-`
 
-let tsTypeorm = `
-import { Entity, PrimaryGeneratedColumn } from "typeorm"
-
-@Entity()
-export class thisiplaceHolder {
-    @PrimaryGeneratedColumn()
-    id: number
-
-}
-
-
-`

@@ -12,7 +12,7 @@ async function generatemiddleware(name) {
     "thisisplaceholder",
     FileName + "Middleware"
   );
-  writeContent(name, middlewareContent, "middlewares");
+  writeContent(name, middlewareContent, "middlewares","middleware");
 }
 module.exports = {
   generatemiddleware,

@@ -1,5 +1,5 @@
 {
-  "name": "excli",
+  "name": "@mohamedhoss123/excli",
   "version": "0.0.7",
   "description": "this is a tool to make your express development easer",
   "bin": "./index.js",
@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mohamedhoss123/express-cli.git"
+    "url": "https://github.com/mohamedhoss123/express-cli.git"
   },
   "keywords": [
     "cli"
@@ -23,7 +22,6 @@
   "dependencies": {
     "commander": "^9.4.1",
     "decompress": "^4.2.1",
-    "inquirer": "^8.0.0",
-    "jszip": "^3.10.1"
+    "inquirer": "^8.0.0"
   }
 }

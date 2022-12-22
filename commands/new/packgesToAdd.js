@@ -14,7 +14,6 @@ async function optinalPackges(prompt) {
   let newPkg = Object.fromEntries(
     Object.entries(pakgesDetails).filter(([key]) => packges.Chose.includes(key))
   );
-  console.log(newPkg);
   changeDependency(newPkg);
 }
 async function optinalDevPackges(prompt) {

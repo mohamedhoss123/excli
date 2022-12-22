@@ -1,9 +1,11 @@
 const { generateController } = require("./controller");
 const { generatemiddleware } = require("./middleware");
+const { generateModel } = require("./model");
 
 let ActionsToTake = {
     "c":generateController,
-    "mi":generatemiddleware
+    "mi":generatemiddleware,
+    "mo": generateModel
 } 
 async function genInit(type,fileName){
     if(ActionsToTake[type]!= undefined){
