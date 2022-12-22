@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { writeContent } = require("../../util/gen/mdine");
-const {orm} = require(path.join(process.cwd(),""))
+
 async function generateModel(name) {
     console.log("used");
   let FileName = name.split("/").pop();
@@ -12,7 +12,7 @@ async function generateModel(name) {
     .toString();
   ModelContent = ModelContent.replaceAll(
     "thisiplaceHolder",
-    FileName + "Model"
+    FileName
   );
   writeContent(name, ModelContent, "models","model");
 }

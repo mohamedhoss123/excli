@@ -7,7 +7,7 @@ async function MVCInit(prompt) {
     type: "list",
     name: "viewChose",
     message: "chose view engine :",
-    choices: ["typeorm","mongoose"],
+    choices: ["ejs","pug"],
   };
   let viewEngine = await prompt(questions);
   viewEngine = viewEngine.viewChose;

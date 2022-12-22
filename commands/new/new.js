@@ -24,7 +24,7 @@ async function newGen(str){
     changePjName(str)
     await optinalPackges(prompt)
     await optinalDevPackges(prompt)
-    createFile(dataForConfigFile)
+    // createFile(dataForConfigFile)
     console.log("run the following commands :\n");
     console.log("npm install");
     console.log("npm start");

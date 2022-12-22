@@ -2,7 +2,9 @@
   "name": "@mohamedhoss123/excli",
   "version": "0.0.7",
   "description": "this is a tool to make your express development easer",
-  "bin": "./index.js",
+  "bin": {
+    "excli": "./index.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
