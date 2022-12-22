@@ -1,0 +1,16 @@
+{
+    "pakgesDetails": {
+        "express-session": "^1.17.3",
+        "body-parser": "^1.20.1",
+        "cookie-parser": "^1.4.6",
+        "multer": "^1.4.5-lts.1",
+        "morgan": "^1.10.0"
+    },
+    "devPakgesDetails":{
+        "nodemon:": "^2.0.20"
+    },
+    "templateEngines":{
+        "ejs":"^3.1.8",
+        "pug":"^3.0.2"
+    }
+}

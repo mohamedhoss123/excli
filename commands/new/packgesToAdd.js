@@ -1,24 +1,20 @@
 const { changeDependency } = require("../../util/changeDependency");
 const { changeDevDependency } = require("../../util/changeDevDep");
+const {devPakgesDetails,pakgesDetails} = require("./packges.json")
 
-const pakgesDetails = {
-  "express-session": "^1.17.3",
-  "body-parser": "^1.20.1",
-};
-const devPakgesDetails = {
-  nodemon: "^2.0.20",
-};
 async function optinalPackges(prompt) {
   const questions = {
     type: "checkbox",
     name: "Chose",
     message: "want to add some pakages ? :",
-    choices: ["express-session", "body-parser"],
+    choices: Object.keys(pakgesDetails),
   };
   let packges = await prompt(questions);
+  console.clear();
   let newPkg = Object.fromEntries(
     Object.entries(pakgesDetails).filter(([key]) => packges.Chose.includes(key))
   );
+  console.log(newPkg);
   changeDependency(newPkg);
 }
 async function optinalDevPackges(prompt) {
@@ -26,7 +22,7 @@ async function optinalDevPackges(prompt) {
     type: "checkbox",
     name: "Chose",
     message: "want to add some devPakages ? :",
-    choices: ["nodemon"],
+    choices: Object.keys(devPakgesDetails),
   };
   let packges = await prompt(questions);
   if (packges.Chose.length != 0) {

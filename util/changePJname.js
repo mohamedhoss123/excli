@@ -9,9 +9,7 @@ function changePjName(name) {
   let fileContent = fs.readFileSync("package.json");
   let jsonFile = JSON.parse(fileContent);
   jsonFile.name = name;
-  console.log(jsonFile);
   let data = JSON.stringify(jsonFile,null," ")
-  console.log(data);
   fs.writeFileSync(
     "package.json",
     data,

@@ -1,6 +1,6 @@
 {
-  "name": "exp-cli",
-  "version": "0.0.1",
+  "name": "excli",
+  "version": "0.0.7",
   "description": "this is a tool to make your express development easer",
   "bin": "./index.js",
   "main": "index.js",
