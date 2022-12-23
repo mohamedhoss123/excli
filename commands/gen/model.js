@@ -8,7 +8,7 @@ async function generateModel(name) {
   let FileName = name.split("/").pop();
   let ModelContent = fs
     .readFileSync(
-      path.join(__dirname, `../../templates/models/${raedConFile().orm}.js`)
+      path.join(__dirname, `../../templates/models/${raedConFile().orm||"none"}.js`)
     )
     .toString();
   ModelContent = ModelContent.replaceAll(

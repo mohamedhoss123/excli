@@ -6,15 +6,16 @@ async function ormInit(prompt) {
     type: "list",
     name: "dbdriver",
     message: "witch orm you want ?",
-    choices: Object.keys(orm),
+    choices: ["none",...Object.keys(orm)],
   };
   let ormChosed = await prompt(questions);
   ormChosed = ormChosed.dbdriver;
-  let newPkg = Object.fromEntries(
-    Object.entries(orm).filter(([key]) =>ormChosed.includes(key))
-  );
-  changeDependency(newPkg)
-  console.log(ormChosed);
+  if(ormChosed != "none"){
+    let newPkg = Object.fromEntries(
+      Object.entries(orm).filter(([key]) =>ormChosed.includes(key))
+    );
+    changeDependency(newPkg)
+  }
   return ormChosed;
 }
 module.exports = {

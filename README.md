@@ -36,6 +36,7 @@ and the orm you choosed is stored in ```excli.json``` file so be carefull and do
 | co | controller |
 | mo | model |
 | mi | middleware |
+| r | router |
 
 #### how to generate
 to generete controller you will write in your terminal somting link this 
@@ -60,3 +61,7 @@ this will create `user.model.js` file inside models directory
     excli gen mi auth
 ```
 this will create `auth.middleware.js` file inside middlewares directory
+```bash
+    excli gen r auth
+```
+this will create `auth.router.js` file inside routes directory
