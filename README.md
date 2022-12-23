@@ -3,12 +3,7 @@
 this packge is a cli tool to make your development with express easer<br>
 
 ## installation
-currently we use github packges to host this packge so if you didn't add it already you need to add github registry with this command :<br>
-```bash
-npm config set @mohamedhoss123:registry=https://npm.pkg.github.com/
-```
-if you aleardy added it install excli golbaly with this command : <br>
-
+install globaly : <br>
 ```bash
 npm i -g @mohamedhoss123/excli
 ```
