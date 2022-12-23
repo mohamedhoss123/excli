@@ -1,6 +1,6 @@
 {
   "name": "@mohamedhoss123/excli",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "this is a tool to make your express development easer",
   "bin": {
     "excli": "./index.js"

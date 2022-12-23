@@ -1,7 +1,7 @@
-const EntitySchema = require("typeorm").EntitySchema
+import { DataSource } from "typeorm";
 
 export default new EntitySchema({
-    name: "thisiplaceHolder",
+    name: "thisiplaceHolderEntity",
     tableName: "thisiplaceHolder",
     columns: {
         id: {

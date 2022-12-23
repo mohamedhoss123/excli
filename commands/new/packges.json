@@ -4,9 +4,7 @@
         "body-parser": "^1.20.1",
         "cookie-parser": "^1.4.6",
         "multer": "^1.4.5-lts.1",
-        "morgan": "^1.10.0",
-        "mysql2": "^2.3.3",
-        "typeorm": "^0.3.11"
+        "morgan": "^1.10.0"
     },
     "devPakgesDetails": {
         "nodemon": "^2.0.20"
@@ -14,5 +12,14 @@
     "templateEngines": {
         "ejs": "^3.1.8",
         "pug": "^3.0.2"
+    },
+    "orm":{
+        "typeorm":"^0.3.11",
+        "mongoose":"^6.8.1"
+    },
+    "databaseDrivers":{
+        "mysql2": "^2.3.3",
+        "pg":"^8.8.0",
+        "sqlite3":"^5.1.4"
     }
 }

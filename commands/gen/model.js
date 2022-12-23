@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { raedConFile } = require("../../util/configFile/ConfigFile");
 const { writeContent } = require("../../util/gen/mdine");
 
 async function generateModel(name) {
@@ -7,7 +8,7 @@ async function generateModel(name) {
   let FileName = name.split("/").pop();
   let ModelContent = fs
     .readFileSync(
-      path.join(__dirname, "../../templates/models/typeorm.js")
+      path.join(__dirname, `../../templates/models/${raedConFile().orm}.js`)
     )
     .toString();
   ModelContent = ModelContent.replaceAll(

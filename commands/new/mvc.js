@@ -12,9 +12,9 @@ async function MVCInit(prompt) {
   let viewEngine = await prompt(questions);
   viewEngine = viewEngine.viewChose;
   console.clear();
-  let tm = {}
-  tm[`${viewEngine}`] = templateEngines[`${viewEngine}`]
-  changeDependency(tm);
+  let chosedTE = {}
+  chosedTE[`${viewEngine}`] = templateEngines[`${viewEngine}`]
+  changeDependency(chosedTE);
   console.clear();
 }
 module.exports = {

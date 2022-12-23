@@ -2,7 +2,9 @@ const { changePjName } = require("../../util/changePJname");
 const inquirer = require('inquirer');
 const { MVCInit } = require("./mvc");
 const { optinalPackges,optinalDevPackges } = require("./packgesToAdd");
-const { createFile } = require("../../util/configFile/createConfigFile");
+const { createConFile } = require("../../util/configFile/ConfigFile");
+const { ormInit } = require("./orm");
+const { dbdriverInit } = require("./dbdrivers");
 const prompt = inquirer.createPromptModule();
 let newTemplate = {
     "MVC":MVCInit,
@@ -24,7 +26,10 @@ async function newGen(str){
     changePjName(str)
     await optinalPackges(prompt)
     await optinalDevPackges(prompt)
-    // createFile(dataForConfigFile)
+    let orm = await ormInit(prompt)
+    dataForConfigFile.orm = orm
+    await dbdriverInit(prompt)
+    createConFile(dataForConfigFile)
     console.log("run the following commands :\n");
     console.log("npm install");
     console.log("npm start");
