@@ -5,7 +5,7 @@ this packge is a cli tool to make your development with express easer<br>
 ## installation
 install globaly : <br>
 ```bash
-npm i -g @mohamedhoss123/excli
+npm i -g excli-tool
 ```
 
 ## docs
