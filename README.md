@@ -26,9 +26,8 @@ example :
     excli new my-app
 ```
 after that continue in process and choce any dependencies you want .<br>
-when you choose the orm any orm you choose will effect the ```gen mo ``` command when you want to generate 
-new model from cli becouse orm are deffren so we made a tempalte for each orm this cli support
-and the orm you choosed is stored in ```excli.json``` file so be carefull and don't delete this file
+when you choose the orm any orm you choose will effect the ```gen mo ``` command when you want to generate <br>
+the ```excli.json``` file is important so be carefull and don't delete it
 
 ### generate command
 | Command | Description |
