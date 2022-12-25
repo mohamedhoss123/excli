@@ -1,7 +1,7 @@
 const { changeDependency } = require("../../util/changeDependency");
 
 const { databaseDrivers} = require("./packges.json")
-async function dbdriverInit(prompt) {
+async function dbdriverInit(projectPath,prompt) {
     console.clear();
     const questions = {
       type: "checkbox",
@@ -14,7 +14,7 @@ async function dbdriverInit(prompt) {
     let newPkg = Object.fromEntries(
       Object.entries(databaseDrivers).filter(([key]) =>dbdriverChoise.includes(key))
     );
-    changeDependency(newPkg)
+    changeDependency(projectPath,newPkg)
     console.clear();
   }
   module.exports = {

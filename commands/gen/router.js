@@ -7,7 +7,7 @@ async function generateRoute(name) {
   let FileName = name.split("/").pop();
   let routeContent = fs
     .readFileSync(
-      path.join(__dirname, `../../templates/routers/route.js`)
+      path.join(__dirname, `../../templates/routers/route.${raedConFile(process.cwd()).lang}`)
     )
     .toString();
   routeContent = routeContent.replaceAll(

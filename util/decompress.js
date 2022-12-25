@@ -1,17 +1,15 @@
-var fs = require("fs");
-var decompress = require("decompress");
-const path = require("path")
-async function unzip(name="test") {
-
+var fs = require("fs-extra");
+const path = require("path");
+function copyProject(name = "test", projectPath,lang) {
   try {
-    const files = await decompress(
-      path.join(__dirname,`../templates/zip/${name}.zip`),
-      process.cwd()
+      fs.copySync(
+      path.join(__dirname, `../templates/projects/${name}.${lang}`),
+      projectPath
     );
   } catch (e) {
     console.log(e);
   }
 }
 module.exports = {
-  unzip,
+  copyProject,
 };

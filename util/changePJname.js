@@ -1,26 +1,15 @@
-const fs = require("fs");
+const fs = require("fs-extra");
 const path = require("path");
 /**
  * @param name the name of the project.
  * 
  * this function is resposibale to change name in packge.json file
  */
-function changePjName(name) {
-  let fileContent = fs.readFileSync("package.json");
-  let jsonFile = JSON.parse(fileContent);
+function changePjName(projectPath,name) {
+  let jsonFile = fs.readJSONSync(path.join(projectPath,"package.json"));
   jsonFile.name = name;
-  let data = JSON.stringify(jsonFile,null," ")
-  fs.writeFileSync(
-    "package.json",
-    data,
-    "utf8",
-    // callback function
-    function (err) {
-      if (err) throw err;
-      // if no error
-      console.log("Data is appended to file successfully.");
-    }
-  );
+  fs.writeJSONSync(path.join(projectPath,"package.json"),  jsonFile,{spaces:1});
+  
 }
 module.exports = {
   changePjName,

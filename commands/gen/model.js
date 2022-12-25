@@ -4,18 +4,23 @@ const { raedConFile } = require("../../util/configFile/ConfigFile");
 const { writeContent } = require("../../util/gen/mdine");
 
 async function generateModel(name) {
-    console.log("used");
   let FileName = name.split("/").pop();
   let ModelContent = fs
     .readFileSync(
-      path.join(__dirname, `../../templates/models/${raedConFile().orm||"none"}.js`)
+      path.join(__dirname, `../../templates/models/${raedConFile(process.cwd()).orm||"none"}.${raedConFile(process.cwd()).lang}`)
     )
     .toString();
   ModelContent = ModelContent.replaceAll(
     "thisiplaceHolder",
     FileName
   );
-  writeContent(name, ModelContent, "models","model");
+  letModelName = ""
+  if(raedConFile(process.cwd()).orm == "typeorm"){
+    letModelName = "entity"
+  }else{
+    letModelName= "model"
+  }
+  writeContent(name, ModelContent, "models",letModelName);
 }
 module.exports = {
   generateModel,

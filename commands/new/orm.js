@@ -1,6 +1,6 @@
 const { changeDependency } = require("../../util/changeDependency");
 const {orm} = require("./packges.json")
-async function ormInit(prompt) {
+async function ormInit(projectPath,prompt) {
   console.clear();
   const questions = {
     type: "list",
@@ -14,7 +14,7 @@ async function ormInit(prompt) {
     let newPkg = Object.fromEntries(
       Object.entries(orm).filter(([key]) =>ormChosed.includes(key))
     );
-    changeDependency(newPkg)
+    changeDependency(projectPath,newPkg)
   }
   return ormChosed;
 }

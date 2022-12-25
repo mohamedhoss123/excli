@@ -2,7 +2,7 @@ const { changeDependency } = require("../../util/changeDependency");
 const { changeDevDependency } = require("../../util/changeDevDep");
 const {devPakgesDetails,pakgesDetails} = require("./packges.json")
 
-async function optinalPackges(prompt) {
+async function optinalPackges(projectPath,prompt) {
   const questions = {
     type: "checkbox",
     name: "Chose",
@@ -14,9 +14,9 @@ async function optinalPackges(prompt) {
   let newPkg = Object.fromEntries(
     Object.entries(pakgesDetails).filter(([key]) => packges.Chose.includes(key))
   );
-  changeDependency(newPkg);
+  changeDependency(projectPath,newPkg);
 }
-async function optinalDevPackges(prompt) {
+async function optinalDevPackges(projectPath,prompt) {
   const questions = {
     type: "checkbox",
     name: "Chose",
@@ -30,7 +30,7 @@ async function optinalDevPackges(prompt) {
         packges.Chose.includes(key)
       )
     );
-    changeDevDependency(newPkg);
+    changeDevDependency(projectPath,newPkg);
   }else{
     return
   }

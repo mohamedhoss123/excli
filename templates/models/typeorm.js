@@ -1,4 +1,4 @@
-import { DataSource } from "typeorm";
+import { EntitySchema } from "typeorm";
 
 export default new EntitySchema({
     name: "thisiplaceHolderEntity",

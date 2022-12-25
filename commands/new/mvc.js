@@ -1,8 +1,9 @@
 const { changeDependency } = require("../../util/changeDependency");
-const { unzip } = require("../../util/decompress");
+const { raedConFile } = require("../../util/configFile/ConfigFile");
+const { copyProject } = require("../../util/decompress");
 const { templateEngines } = require("./packges.json");
-async function MVCInit(prompt) {
-  await unzip("MVC");
+async function MVCInit(prompt,projectPath) {
+  copyProject("MVC",projectPath,raedConFile(projectPath).lang);
   const questions = {
     type: "list",
     name: "viewChose",
@@ -15,7 +16,7 @@ async function MVCInit(prompt) {
   if (viewEngine != "none") {
     let chosedTE = {};
     chosedTE[`${viewEngine}`] = templateEngines[`${viewEngine}`];
-    changeDependency(chosedTE);
+    changeDependency(projectPath,chosedTE);
   }
   console.clear();
 }

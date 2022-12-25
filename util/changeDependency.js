@@ -1,21 +1,10 @@
-const fs = require("fs");
+const fs = require("fs-extra");
 const path = require("path");
 
-function changeDependency(packges) {
-  console.log("here manga");
-  let fileContent = fs.readFileSync("package.json");
-  let jsonFile = JSON.parse(fileContent);
-  jsonFile.dependencies = Object.assign(packges,jsonFile.dependencies);
-  let data = JSON.stringify(jsonFile,null," ")
-  fs.writeFileSync(
-    "package.json",
-    data,
-    "utf8",
-    function (err) {
-      if (err) throw err;
-      // if no error
-    }
-  );
+function changeDependency(projectPath,packges) {
+  let jsonFile = fs.readJSONSync(path.join(projectPath,"package.json"));
+  jsonFile.dependencies = Object.assign(packges, jsonFile.dependencies);
+  fs.writeJSONSync(path.join(projectPath,"package.json"),  jsonFile,{spaces:1});
 }
 module.exports = {
   changeDependency,
