@@ -10,7 +10,7 @@ async function LangInit(projectPath,prompt) {
   const questions = {
     type: "list",
     name: "langChoise",
-    message: "chose view engine :",
+    message: "chose lang :",
     choices: ["javascript", "typescript"],
   };
   let lang = await prompt(questions);

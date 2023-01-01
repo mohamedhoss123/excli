@@ -2,6 +2,7 @@
 const { Command } = require("commander");
 const { genInit } = require("./commands/gen/gen");
 const { newGen } = require("./commands/new/new");
+const { pkg } = require("./commands/pkg/pkg");
 
 const program = new Command();
 
@@ -27,4 +28,11 @@ program
     await genInit(type, filename);
   });
 
+program
+  .command("pkg")
+  .description("mange dependencys")
+  .option("-d,-D")
+  .action(async (type) => {
+    await pkg(type);
+  });
 program.parse();

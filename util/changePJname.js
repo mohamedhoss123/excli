@@ -7,7 +7,7 @@ const path = require("path");
  */
 function changePjName(projectPath,name) {
   let jsonFile = fs.readJSONSync(path.join(projectPath,"package.json"));
-  jsonFile.name = name;
+  jsonFile.name = name.toLowerCase();
   fs.writeJSONSync(path.join(projectPath,"package.json"),  jsonFile,{spaces:1});
   
 }

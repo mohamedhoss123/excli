@@ -7,7 +7,7 @@ async function optinalPackges(projectPath,prompt) {
     type: "checkbox",
     name: "Chose",
     message: "want to add some pakages ? :",
-    choices: Object.keys(pakgesDetails),
+    choices: Object.keys(pakgesDetails)
   };
   let packges = await prompt(questions);
   console.clear();
@@ -22,6 +22,7 @@ async function optinalDevPackges(projectPath,prompt) {
     name: "Chose",
     message: "want to add some devPakages ? :",
     choices: Object.keys(devPakgesDetails),
+    default:['nodemon']
   };
   let packges = await prompt(questions);
   if (packges.Chose.length != 0) {

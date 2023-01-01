@@ -1,6 +1,7 @@
 const { changeDependency } = require("../../util/changeDependency");
 const { raedConFile } = require("../../util/configFile/ConfigFile");
 const { copyProject } = require("../../util/decompress");
+const { setTempEngine } = require("../../util/mvc/setTmpEng");
 const { templateEngines } = require("./packges.json");
 async function MVCInit(prompt,projectPath) {
   copyProject("MVC",projectPath,raedConFile(projectPath).lang);
@@ -17,6 +18,7 @@ async function MVCInit(prompt,projectPath) {
     let chosedTE = {};
     chosedTE[`${viewEngine}`] = templateEngines[`${viewEngine}`];
     changeDependency(projectPath,chosedTE);
+    setTempEngine(projectPath,viewEngine)
   }
   console.clear();
 }
